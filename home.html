@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a24a773990.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Futura+PT:wght@400;700&display=swap" rel="stylesheet">
+   <!-- swiper's css link-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+
+<style>
+body {
+    font-family: "Futura PT", sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    }
+/* some variables I added*/
+:root{
+    --main-color: #228b22;
+    --second-color: #ebeff2;
+    --text-color: #02171d;
+    --bg-color: #fff;
+
+    /* Box Shadows */
+    --box-shadow:2px 2px 10px 4px rgb(14 55 54 / 155%);
+    }
+    /* Customer Scroll Bar*/
+    html::-webkit-scrollbar{
+        width:0.5rem;
+    }
+    html::-webkit-scrollbar-thumb{
+        background: transparent;
+    }
+    html::-webkit-scrollbar-track{
+        background: var(--text-color);
+        border-radius: 5rem;
+    }
+    img{
+        width:50%;
+        float: right;
+        margin-top: -200px;
+    }
+    section{
+        padding: 50px 100px;
+        
+    }
+/* some variables I added*/
+
+
+.navbar {
+    background-color: #228b22; /* Green background */
+    padding: 0 70px; /* Padding left and right */
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+}
+
+.container-fluid {
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Vertically center the brand text */
+}
+
+.navbar-brand .text-color2 {
+    color: #fafafa; /* Yellow color */
+}
+
+.navbar-toggler {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    border: none; /* Remove any border if present */
+    background-color: transparent; /* Make background transparent */
+    padding-left: 10px;
+}
+
+.navbar-toggler .fa-bars {
+    color: white; /* Change to your desired color */
+    font-size: 1.3em; /* Adjust size as needed */
+}
+.navbar-toggler .fa-bars:active,
+.navbar-toggler .fa-bars:focus {
+    color:
+    outline: none; /* Remove outline */
+    border-shadow: none; /* Remove border */
+    box-shadow: none;
+}
+.navbar-toggler.custom-toggler:focus,
+.navbar-toggler.custom-toggler:active {
+    outline: none; /* Remove outline */
+    border: none; /* Remove border */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center; /* Vertically center nav items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove default list style */
+}
+.container-fluid {
+    padding: 5px 0;
+}
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    margin: 0 5px; /* Add margin between items */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center; /* Vertically center link content */
+    padding: 10px; /* Add padding inside the links */
+    margin: 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700;
+}
+
+.navbar-nav .cart .nav-link {
+    position: relative;
+}
+
+.navbar-nav .cart .nav-link::after {
+    content: "0";
+    position: absolute;
+    top: 60%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: #333333;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 10px;
+    width: 20px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.form-control {
+    border-radius: 20px;
+    padding-right: 2.5rem; /* Space for the icon */
+}
+
+.search-container {
+    position: relative;
+    top: 110%;
+    right: 1rem;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.search-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.btn-outline {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline:hover {
+    background-color: #ffd700;
+    border-color: #ffd700;
+}
+
+.top-info {
+    background-color: #333;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+}
+
+.login-text {
+    color: white; /* Text color */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    font-size: 13px; /* Font size */
+    margin: 0;
+}
+
+.login-text:hover {
+    color: #ffd700; /* Text color on hover */
+}
+
+.fa-user,
+.fa-shopping-cart,
+.fa-heart,
+.fa-truck-fast,
+.fa-map-location-dot {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.navbar-nav .nav-link span {
+    line-height: normal; /* Reset line height */
+    vertical-align: middle; /* Align text vertically */
+    margin-left: 5px; /* Adjust as needed */
+}
+
+.cart-text {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgba(250, 250, 250, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    padding-top: 24px;
+}
+
+.sidebar .sidebar-title {
+    padding-left: 16px;
+    color: #228b22;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Allow the ul to grow and fill the available space */
+}
+
+.sidebar ul li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #228b22;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.sidebar .footer {
+    padding: 10px;
+    background-color: #228b22;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .footer a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.sidebar .footer a i {
+    padding: 0 10px
+}
+
+.sidebar .footer .settings {
+    margin-bottom: 15pxpx;
+}
+
+/* Secondary menu background color */
+.secondary-menu {
+}
+
+/* Nav links color */
+.secondary-menu .nav-link {
+    font-weight: bold; /* Bold text */
+    color:#212529;
+}
+
+/* Nav links hover effect */
+.secondary-menu .nav-link:hover {
+}
+.category-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px; /* Initially hide off-screen */
+    width: 350px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1050;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.category-sidebar.show {
+    right: 0; /* Slide in the sidebar */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.custom-dropdown-width {
+    width: 1000px; /* Set this to the desired width */
+}
+
+.category-box {
+    height: 140px; /* Adjust the height as needed */
+    border: 2px solid #4CAF50; /* Optional: Green border similar to the image provided */
+    }
+
+    .category-box img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .category-name-overlay {
+        bottom: 0;
+        height: 40px; /* Adjust height as needed */
+        background-color: rgba(76, 175, 80, 0.7); /* Green with transparency */
+    }
+    .row.category{
+        padding: 15px; /* Add some padding inside the border */
+        border-radius: 8px; /* Optional: Rounded corners for the container */
+        background-color: #f9f9f9; /* Optional: Light background color */
+    }
+
+    .transition-dropdown {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+        opacity: 0;
+    }
+    
+    .transition-dropdown.show {
+        max-height: 1000px; /* Large enough to accommodate the dropdown's content */
+        opacity: 1;
+    }
+
+
+@media (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* Default: Hide mobile navigation, show desktop navigation */
+.mobile-nav,
+.mobile-search-form {
+    display: none;
+}
+
+.desktop-nav {
+    display: flex;
+}
+
+/* Mobile View: Show mobile navigation, hide desktop navigation */
+@media (max-width: 576px) {
+    .navbar {
+        padding-left: 15px; /* Reduce padding for smaller screens */
+        padding-right: 10px; /* Reduce padding for smaller screens */
+    }
+    .nav-link .fa-house,
+    .nav-link .fa-table-list,
+    .nav-link .fa-table-cells-large,
+    .nav-link .fa-heart{
+        margin-right: 15px;
+        font-size: 1.3rem;
+    }
+    .nav-link .fa-truck-fast {
+        margin-right: 8px;
+        font-size: 1.3rem;
+    }
+    .top-info {
+        display: none;
+    }
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-size: 21px; /* Adjust font size for smaller screens */
+        margin: 10px 0px 10px 10px;
+    }
+
+    .navbar-toggler.custom-toggler {
+        padding: 0; /* Remove padding for small screens */
+        margin: 0; /* Ensure no default margin */
+        box-shadow: none;
+    }
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        margin: 0; /* Ensure no default margin */
+        padding: 0; /* Ensure no default padding */
+        flex-direction: row;
+    }
+    .fa-user,
+    .fa-shopping-cart,
+    .fa-map-location-dot,
+    .fa-search {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    .navbar-nav .nav-link {
+        /* Adjust font size for smaller screens */
+        display: flex;
+        align-items: center;
+        padding: 0 5px; /* Adjust as needed */
+        margin: 0;
+    }
+
+    .navbar-nav .cart .nav-link::after {
+        top: 65%;
+        right: -5px;
+        transform: translateY(-50%);
+        width: 20px;
+        padding: 2px 2px;
+    }
+
+    .login-text,
+    .navbar-right form {
+        display: none !important;
+    }
+
+    .mobile-nav {
+        display: flex !important; /* Show mobile navigation */
+    }
+
+    .desktop-nav {
+        display: none !important; /* Hide desktop navigation */
+    }
+
+    /* Smooth transitions for collapse */
+    .collapse {
+        transition: 0.4s ease-in-out;
+    }
+
+    .collapse.show {
+        transition: height 0.4s ease-in-out;
+    }
+
+    /* Mobile Search Form */
+    #mobile-search-form {
+        background-color: #228b22; /* Match the navbar background */
+        padding: 10px;
+        width: 100%;
+        z-index: 1000; /* Ensure it appears above other content */
+        border-radius: 0px 0px 30px 30px;
+    }
+}
+/* Custom styles for the secondary menu */
+.secondary-menu {
+    display: none;
+}
+@media (min-width: 992px) { /* Adjust the breakpoint as needed */
+    .secondary-menu {
+        display: block;
+    }
+}
+
+/* Tablet View: Adjust styles for tablets */
+@media (min-width: 577px) and (max-width: 1024px) {
+    .navbar-brand {
+        padding-right: 0;
+    }
+    .navbar {
+        padding: 0 30px; /* Adjust padding for tablets */
+        flex-wrap: nowrap;
+        align-content: normal;
+        justify-content: space-betweenm;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        display: flex;
+        align-items: center;
+        margin: 0; /* Ensure no default margin */
+        padding: 0; /* Ensure no default padding */
+        flex-direction: row;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 17px; /* Adjust font size for smaller screens */
+        display: flex;
+        align-items: center;
+        padding: 0 5px; /* Adjust as needed */
+        margin: 0;
+    }
+    .navbar-brand {
+        font-size: 28px; /* Adjust font size for tablets */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 18px; /* Adjust font size for tablets */
+    }
+    .navbar-toggler.custom-toggler {
+        box-shadow: none;
+    }
+    .sidebar-title{
+        margin-top:10px;
+    }
+
+
+    .form-control {
+        border-radius: 15px; /* Slightly smaller radius for tablets */
+        padding-right: 2rem; /* Slightly smaller padding for tablets */
+    }
+    .mobile-nav {
+        display: none !important; /* Show mobile navigation */
+    }
+
+    .desktop-nav {
+        display: flex !important; /* Hide desktop navigation */
+    }
+}
+@media (max-width: 846px) {
+    .login-text {
+        display: none;
+    }
+}
+
+/* Large Desktop View: Default styles for large desktops */
+@media (min-width: 1025px) {
+    .navbar {
+        padding: 0 70px; /* Default padding for large desktops */
+    }
+
+    .navbar-brand {
+        font-size: 30px; /* Default font size for large desktops */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 20px; /* Default font size for large desktops */
+    }
+}
+
+/*Customer Landing Page*/
+    .home{
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, ifr));
+        align-items: center;
+        gap: 1.5rem;
+        background: var(--second-color);
+    }
+    .home-text span{
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .home-text h1 {
+        font-size: 3.4rem;
+        margin-bottom: 1rem;
+    }
+    .btn{
+        padding: 0.3rem 1.8rem;
+        background: var(--main-color);
+        color: var(--bg-color);
+        font-weight: 500;
+        display: inline-block;
+        text-transform: uppercase;
+        clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    }
+    .btn:hover{
+        background: var(--text-color--);
+        letter-spacing: 2px;
+        transition: 0.2s;
+    }
+    .heading{
+        text-align: center;
+    }
+    .heading h1 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: var(--text-color);
+    }
+    .heading span{
+        padding: 0.3rem 1.8rem;
+        background: var(--main-color);
+        color: var(--bg-color);
+        font-weight: 500;
+        display: inline-block;
+        text-transform: uppercase;
+        clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    }
+    .popular-products{
+        margin-top: 2rem;
+    }
+    .popular-products .box{
+        position: relative;
+        overflow: hidden;
+        background: var(--second-color);
+    }
+    .popular-products .box img{
+        background: var(--second-color);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .popular-products .box .content{
+        position: absolute;
+        top: -100%;
+        right: 0;
+        width: 100%;
+        height: 100%;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: hsl(0, 0%, 91%, 0.5);
+        overflow: hidden;
+    }
+    .popular-products .box:hover .content{
+        top:0;
+        transition: 0.2s;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+    <div class="top-info"></div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler custom-toggler" type="button" id="sidebarToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <span>BiCol</span><span class="text-color2">lection</span>
+            </a>
+            <div class="navbar-right d-flex align-items-center ms-auto">
+                <form class="d-flex me-3 desktop-search-form" role="search">
+                    <div class="search-container position-relative">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn search-icon" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+                <!-- Hamburger Navigation -->
+
+                <!-- Desktop Navigation -->
+                <ul class="navbar-nav desktop-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="{{ route('map') }}">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item truck me-2">
+                        <a class="nav-link d-flex align-items-center" href="{{ route('order.track.form') }}">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="#">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link d-flex align-items-center" href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="{{ route('login') }}">
+                            <i class="fas fa-user"></i>
+                            <span class="login-text">
+                                Login /<br>
+                                Sign In
+                            </span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Mobile Navigation -->
+                <ul class="navbar-nav mobile-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" id="mobile-search-icon">
+                            <i class="fas fa-search mobile"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="{{ route('map') }}">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item cart">
+                        <a class="nav-link d-flex align-items-center" href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="{{ route('login') }}">
+                            <i class="fas fa-user"></i>
+                            <span class="login-text">
+                                Login /<br>
+                                Sign In
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secondary Menu for larger screens -->
+    <div class="container mt-0">
+        <div class="secondary-menu">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('product.index') }}">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                    </a> 
+                    <ul class="dropdown-menu dropdown-menu-end p-3 custom-dropdown-width transition-dropdown" aria-labelledby="categoryDropdown">
+                        <li class="dropdown-item">
+                            <div class="container">
+                                <h5>Browse Product by Category</h5>
+                                <div class="row category">
+                                    <div class="col-3">
+                                        <a href="#">
+                                            <div class="category-box border rounded text-center position-relative overflow-hidden">
+                                                <img src="{{ asset('images/assets/category/abacacategory.jpg') }}" alt="Category 1" class="img-fluid w-100 h-100">
+                                                <div class="category-name-overlay position-absolute w-100 d-flex align-items-center justify-content-center">
+                                                    <p class="text-white font-weight-bold m-0">Abaca Products</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-3">
+                                        <a href="#">
+                                            <div class="category-box border rounded text-center position-relative overflow-hidden">
+                                                <img src="{{ asset('images/assets/category/pilicategory.jpg') }}" alt="Category 2" class="img-fluid w-100 h-100">
+                                                <div class="category-name-overlay position-absolute w-100 d-flex align-items-center justify-content-center">
+                                                    <p class="text-white font-weight-bold m-0">Pilinuts</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-3">
+                                        <a href="#">
+                                            <div class="category-box border rounded text-center position-relative overflow-hidden">
+                                                <img src="{{ asset('images/assets/category/pilicategory.jpg') }}" alt="Pilinuts" class="img-fluid w-100 h-100">
+                                                <div class="category-name-overlay position-absolute w-100 d-flex align-items-center justify-content-center">
+                                                    <p class="text-white font-weight-bold m-0">Pilinuts</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-3">
+                                        <a href="#">
+                                            <div class="category-box border rounded text-center position-relative overflow-hidden">
+                                                <img src="{{ asset('images/assets/category/pilicategory.jpg') }}" alt="Category 4" class="img-fluid w-100 h-100">
+                                                <div class="category-name-overlay position-absolute w-100 d-flex align-items-center justify-content-center">
+                                                    <p class="text-white font-weight-bold m-0">Pilinuts</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Customize a Product</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mobile-search-form" class="collapse">
+        <form class="d-flex" role="search">
+            <div class="search-container position-relative">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn search-icon" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-4">
+    </div>
+
+    <!-- Main Sidebar -->
+    <div id="sidebar" class="sidebar" style="width: 0;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h5 class="sidebar-title">MENU</h5>
+        <ul class="mt-4 mb-5">
+            <li class="nav-item home">
+                <a class="nav-link d-flex align-items-center me-2" href="#">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+            </li>
+            <li class="nav-item product">
+                <a class="nav-link d-flex align-items-center me-2" href="{{ route('product.index') }}">
+                    <i class="fa-solid fa-table-list"></i> Products
+                </a>
+            </li>
+            <li class="nav-item category">
+                <a class="nav-link d-flex align-items-center me-2" href="#">
+                    <i class="fa-solid fa-table-cells-large"></i> Category
+                </a>
+            </li>
+            <li class="nav-item liked">
+                <a class="nav-link d-flex align-items-center" href="#">
+                    <i class="fa-solid fa-heart"></i> Liked
+                </a>
+            </li>
+            <li class="nav-item truck">
+                <a class="nav-link d-flex align-items-center me-2" href="{{ route('order.track.form') }}">
+                    <i class="fa-solid fa-truck-fast"></i> Track Order
+                </a>
+            </li>
+        </ul>
+        <div class="footer">
+            <a href="#">
+                <i class="fa-solid fa-cog"></i>
+            </a>
+            <a href="#">
+                Logout<i class="fa-solid fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <!--Customer Landing Page -->
+   <section class="home" id="home">
+    <div class="home-text">
+        <span>Get It Today</span>
+        <h1>New Launch:<br>Discover the Latest Drops!</h1>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+        <div class="home-img">
+            <img src="home.png" alt="">
+        </div>
+   </section>
+
+   <section class="new" id="new">
+        <div class="heading">
+            <h1><b>Popular <span>Products</span></b></h1>
+        </div>
+        <div class="swiper popular-products">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="bag.jpg" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="bag2.jpg" alt="">
+                    <div class="content">
+                        <a href="#" class="btn">Buy Now</a>
+                    </div>
+                </div>
+            <div class="swiper-slide box">
+                <img src="bag.jpg" alt="">
+                <div class="content">
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="bag2.jpg" alt="">
+                <div class="content">
+                    <a href="#" class="btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.width === '250px') {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        document.getElementById('mobile-search-icon').addEventListener('click', function() {
+            var searchForm = document.getElementById('mobile-search-form');
+            if (searchForm.style.display === 'none' || searchForm.style.display === '') {
+                searchForm.style.display = 'block';
+            } else {
+                searchForm.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!--Swiper JS-->
+<script>
+    var swiper = new Swiper(".popular-products", {
+        spaceBetween: 10,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+</body>
+</html>
